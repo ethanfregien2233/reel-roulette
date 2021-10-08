@@ -3,7 +3,6 @@ var movieOverview = document.querySelector("#movie-overview");
 var watchInfo = document.querySelector("#where-to-watch");
 var submitBtn = document.querySelector("#submit-button");
 var genreMenu = document.querySelector("#genre-menu");
-var 
 
 var searchMovie = function(event) {
     event.preventDefault();
@@ -30,9 +29,9 @@ var getWatchInfo = function(title) {
 function init() {
     gapi.client.setApiKey("AIzaSyBvbJ-L8p9Ao3KqmIv5kfPY0NJeHN-1FcA");
     gapi.client.load("youtube", "v3", function () {
-        
-    })
+    });
 }
+
 var getTrailer = function(title) {
    
 }
