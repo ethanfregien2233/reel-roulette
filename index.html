@@ -26,7 +26,8 @@
 
         <!-- container for movie genre dropdown menu -->
         <div class="card-panel">
-                <select>
+            <form id="genre-form">
+                <select id="genre-menu">
                     <option value="" disabled selected> Select a Genre </option>
                     <option value="28">Action</option>
                     <option value="12">Adventure</option>
@@ -42,7 +43,8 @@
                     <option value="16">Animated</option>
                     <option value="10751">Kids</option>
                 </select>
-            </div>
+                <button id="submit-button" type="submit">Submit</button>
+            </form>
         </div>
 
         <!-- container for movie information -->
@@ -54,7 +56,7 @@
 
         <!-- container for movie trailer -->
         <div id="trailer-container">
-            
+
         </div>
 </div>
     <script src="assets/js/script.js"></script>
