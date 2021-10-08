@@ -26,25 +26,34 @@ var getWatchInfo = function(title) {
     // put your fetch request here using "title"
 }
 
-function init() {
-    gapi.client.setApiKey("AIzaSyBvbJ-L8p9Ao3KqmIv5kfPY0NJeHN-1FcA");
-    gapi.client.load("youtube", "v3", function () {
-    });
-}
+function loadClient() {
+        gapi.client.setApiKey("AIzaSyBvbJ-L8p9Ao3KqmIv5kfPY0NJeHN-1FcA");
+        return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+            .then(function() { console.log("GAPI client loaded for API"); },
+                  function(err) { console.error("Error loading GAPI client for API", err); });
+      }
+      
+      function execute() {
+        return gapi.client.youtube.search.list({
+          "part": [
+            "snippet"
+          ],
+          "q": "YouTube Data API",
+          "type": [
+            "video"
+          ],
+          "videoCaption": "closedCaption"
+        })
+            .then(function(response) {
+                    
+                    console.log("Response", response);
+                  },
+                  function(err) { console.error("Execute error", err); });
+      }
 
-var getTrailer = function(title) {
-   
-}
+
 
 searchMovie();
-
-gapi.load("client", loadClient);
-  
-function loadClient() {
-    gapi.client.setApiKey("AIzaSyBvbJ-L8p9Ao3KqmIv5kfPY0NJeHN-1FcA");
-    return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-        .then(function() { console.log("GAPI client loaded for API"); },
-                function(err) { console.error("Error loading GAPI client for API", err); }) };
 
 
 
