@@ -27,8 +27,14 @@ var getWatchInfo = function(title) {
     // put your fetch request here using "title"
 }
 
+function init() {
+    gapi.client.setApiKey("AIzaSyBvbJ-L8p9Ao3KqmIv5kfPY0NJeHN-1FcA");
+    gapi.client.load("youtube", "v3", function () {
+        
+    })
+}
 var getTrailer = function(title) {
-    // put your fetch request for the trailer here using "title"
+   
 }
 
 searchMovie();
