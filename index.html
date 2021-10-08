@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
     <title>Reel Roulette</title>
@@ -24,9 +23,7 @@
     <br>
     <br>
     <div class="container">
-        <div class="row">
-            <div class="col s5">
-                <div class="input-field col s12">
+        <div class="card-panel">
                 <select>
                     <option value="" disabled selected> Select a Genre </option>
                     <option value="28">Action</option>
@@ -39,16 +36,19 @@
                     <option value="27">Horror</option>
                     <option value="10749">Romance</option>
                     <option value="878">SciFi</option>
-                    <option value="37">western</option>
+                    <option value="37">Western</option>
                     <option value="16">Animated</option>
                     <option value="10751">Kids</option>
                 </select>
-                <label>Genre Selector</label>
                 </div>
             </div>
-        </div>
-    </div>
-
+</div>
     <script src="assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script> document.addEventListener('DOMContentLoaded', function() {
+        var sel = document.querySelectorAll('select');
+        M.FormSelect.init(sel)
+      });
+    </script>
 </body>
 </html>
