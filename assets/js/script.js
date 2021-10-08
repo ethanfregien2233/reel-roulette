@@ -3,7 +3,7 @@ var movieOverview = document.querySelector("#movie-overview");
 var watchInfo = document.querySelector("#where-to-watch");
 var submitBtn = document.querySelector("#submit-button");
 var genreMenu = document.querySelector("#genre-menu");
-var 
+var trailerContainer = document.querySelector("#trailer-container");
 
 var searchMovie = function(event) {
     event.preventDefault();
