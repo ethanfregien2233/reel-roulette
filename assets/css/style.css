@@ -5,8 +5,9 @@
 }
 
 body {
-    background-color:purple;
-    color: silver;
+    background-color: #696969;
+    color:white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .hero {
     display: flex;
