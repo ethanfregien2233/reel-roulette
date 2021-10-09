@@ -26,33 +26,34 @@ var getWatchInfo = function(title) {
     // put your fetch request here using "title"
 }
 
-function loadClient() {
-        gapi.client.setApiKey("AIzaSyBvbJ-L8p9Ao3KqmIv5kfPY0NJeHN-1FcA");
-        return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-            .then(function() { console.log("GAPI client loaded for API"); },
-                  function(err) { console.error("Error loading GAPI client for API", err); });
+function getVideo() {
+    $.ajax({
+      type: 'GET',
+      url: 'https://www.googleapis.com/youtube/v3/search',
+      data: {
+          key: 'AIzaSyBvbJ-L8p9Ao3KqmIv5kfPY0NJeHN-1FcA',
+          q: "Machete Trailer (2010)",
+          part: 'snippet',
+          maxResults: 1,
+          type: 'video',
+          videoEmbeddable: true,
+      },
+      success: function(data){
+          embedVideo(data)
+      },
+      error: function(response){
+          console.log("Request Failed");
       }
+    });
+  }
+
+  function embedVideo(data) {
+    $('iframe').attr('src', 'https://www.youtube.com/embed/' + data.items[0].id.videoId)
+    $('.youtube').text(data.items[0].snippet.title)
+    $('.description').text(data.items[0].snippet.description)
+}
       
-      function execute() {
-        return gapi.client.youtube.search.list({
-          "part": [
-            "snippet"
-          ],
-          "q": "YouTube Data API",
-          "type": [
-            "video"
-          ],
-          "videoCaption": "closedCaption"
-        })
-            .then(function(response) {
-                    
-                    console.log("Response", response);
-                  },
-                  function(err) { console.error("Execute error", err); });
-      }
-
-
-
+getVideo();
 searchMovie();
 
 
