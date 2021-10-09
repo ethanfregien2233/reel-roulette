@@ -3,6 +3,7 @@ var movieOverview = document.querySelector("#movie-overview");
 var watchInfo = document.querySelector("#where-to-watch");
 var submitBtn = document.querySelector("#submit-button");
 var genreMenu = document.querySelector("#genre-menu");
+var trailerContainer = document.querySelector("#trailer-container");
 
 var searchMovie = function(event) {
     event.preventDefault();
@@ -49,8 +50,8 @@ function getVideo() {
 
   function embedVideo(data) {
     $('iframe').attr('src', 'https://www.youtube.com/embed/' + data.items[0].id.videoId)
-    $('.youtube').text(data.items[0].snippet.title)
-    $('.description').text(data.items[0].snippet.description)
+    $('#movie-title').text(data.items[0].snippet.title)
+    $('#movie-overview').text(data.items[0].snippet.description)
 }
       
 getVideo();
