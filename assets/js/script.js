@@ -6,7 +6,6 @@ var genreMenu = document.querySelector("#genre-menu");
 var trailerContainer = document.querySelector("#trailer-container");
 
 var searchMovie = function(event) {
-    event.preventDefault();
     var genreId = genreMenu.value;
     fetch("https://api.themoviedb.org/3/discover/movie?api_key=e4a0fa8349dde042a07202bf3cbf39c6&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=" + genreId + "&with_watch_monetization_types=rent")
     .then(function(data) {
@@ -33,7 +32,7 @@ function getVideo() {
       url: 'https://www.googleapis.com/youtube/v3/search',
       data: {
           key: 'AIzaSyBvbJ-L8p9Ao3KqmIv5kfPY0NJeHN-1FcA',
-          q: "Machete Trailer (2010)",
+          q: "machete trailer",
           part: 'snippet',
           maxResults: 1,
           type: 'video',
@@ -50,8 +49,6 @@ function getVideo() {
 
   function embedVideo(data) {
     $('iframe').attr('src', 'https://www.youtube.com/embed/' + data.items[0].id.videoId)
-    $('#movie-title').text(data.items[0].snippet.title)
-    $('#movie-overview').text(data.items[0].snippet.description)
 }
       
 getVideo();
