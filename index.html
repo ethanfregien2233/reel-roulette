@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Reel Roulette</title>
 </head>
 <body>
@@ -22,27 +23,45 @@
     <br>
     <br>
     <br>
-    <div class="container">
-        <div class="card-panel">
-                <select>
-                    <option value="" disabled selected> Select a Genre </option>
-                    <option value="28">Action</option>
-                    <option value="12">Adventure</option>
-                    <option value="14">Fantasy</option>
-                    <option value="35">Comedy</option>
-                    <option value="53">Thriller</option>
-                    <option value="80">Crime</option>
-                    <option value="18">Drama</option>
-                    <option value="27">Horror</option>
-                    <option value="10749">Romance</option>
-                    <option value="878">SciFi</option>
-                    <option value="37">Western</option>
-                    <option value="16">Animated</option>
-                    <option value="10751">Kids</option>
-                </select>
-                </div>
+    <main class="container">
+        <div class="row"
+        <!-- container for movie genre dropdown menu -->
+            <div class="input-field col s3" id="form-container">
+                <form id="genre-form">
+                    <select id="genre-menu">
+                        <option value="" disabled selected> Select a Genre </option>
+                        <option value="28">Action</option>
+                        <option value="12">Adventure</option>
+                        <option value="14">Fantasy</option>
+                        <option value="35">Comedy</option>
+                        <option value="53">Thriller</option>
+                        <option value="80">Crime</option>
+                        <option value="18">Drama</option>
+                        <option value="27">Horror</option>
+                        <option value="10749">Romance</option>
+                        <option value="878">SciFi</option>
+                        <option value="37">Western</option>
+                        <option value="16">Animated</option>
+                        <option value="10751">Kids</option>
+                    </select>
+                    <button id="submit-button" type="submit">Submit</button>
+                </form>
             </div>
-</div>
+        
+
+            <!-- container for movie information -->
+            <div id="movie-information">
+                <h3 id="movie-title">Movie Title Here</h3>
+                <p id="movie-overview">Movie overview here</p>
+                <h4 id="where-to-watch"></h4>
+            </div>
+
+            <!-- container for movie trailer -->
+            <div id="trailer-container">
+                <img src="./assets/images/pulp-fiction-dance.gif" />
+            </div>
+        </div>
+    </main>
     <script src="assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script> document.addEventListener('DOMContentLoaded', function() {
