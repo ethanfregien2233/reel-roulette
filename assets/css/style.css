@@ -5,16 +5,20 @@
 }
 
 body {
-    background-color:purple;
-    color: silver;
+    background-color:rgb(36, 36, 36);
+    color: whitesmoke;
 }
 .hero {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     background-size: cover;
-    background-position: 80%;
+    background-image: url("../images/reel2.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
     height:200px;
+    border-bottom: solid;
 }
 .hero-cta {
     max-width: 100%;
@@ -29,4 +33,25 @@ body {
 
   .container {
       border-style: solid;
+      background-color: rgb(85, 6, 0);
+      width: 85%;
+  }
+  
+  form {
+      background-color: rgba(63, 63, 63, 0.705);
+      border: solid;
+  }
+
+  #form-container {
+      margin-left: 10px;
+  }
+
+  button {
+      color: black;
+      padding: 2px;
+      margin: 2px;
+  }
+
+  #movie-information {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
