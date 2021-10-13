@@ -26,10 +26,11 @@
     <br>
     <main class="container">
         <div class="row">
-            <div class="input-field col s3" id="form-container">
+            <div class="input-field col 12 center-align" id="form-container">
+                <h3>Select a genre</h3>
                 <form id="genre-form">
-                    <select id="genre-menu">
-                        <option value="" disabled selected> Reel Roulette </option>
+                    <select  id="genre-menu">
+                        <option value=""> Roulette </option>
                         <option value="28">Action</option>
                         <option value="12">Adventure</option>
                         <option value="14">Fantasy</option>
@@ -44,22 +45,22 @@
                         <option value="16">Animated</option>
                         <option value="10751">Kids</option>
                     </select>
-                    <button id="submit-button" type="submit">Submit</button>
+                    <button class="#9e9e9e grey" id="submit-button" type="submit">Submit</button>
                 </form>
         
             </div>
 </div>
     
             <!-- container for movie information -->
-            <div id="movie-information">
-                <h3 id="movie-title">Welcome to Reel Roulette!</h3>
-                <p id="movie-overview">Select your category and play!</p>
-                <h4 id="where-to-watch"></h4>
+            <div class="row" id="movie-information">
+                <h3 class=" col s12 center-align" id="movie-title"> Welcome to Reel Roulette</h3>
+                <p class=" col s12 center-align" id="movie-overview"> Pick a categorey from the drop down menu and let us do the rest.</p>
+                <h4 class=" col s3" id="where-to-watch"></h4>
             </div>
 
             <!-- container for movie trailer -->
-            <div id="trailer-container">
-            <iframe src=""></iframe>
+            <div class="col s12 center-align" id="trailer-container">
+            <iframe width="720px" height="480" src=""></iframe>
             </div>
         </div>
     </main>
