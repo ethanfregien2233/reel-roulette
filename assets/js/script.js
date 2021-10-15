@@ -6,9 +6,11 @@ var genreMenu = document.querySelector("#genre-menu");
 var trailerContainer = document.querySelector("#trailer-container");
 var watchLater = document.querySelector("#watch-later");
 
-let wlList = {
+var wlList = {
     "movie-title": []}
 
+
+    JSON.parse(localStorage.getItem(wlList));
 
 var searchMovie = function(event) {
     // prevent Browser default refresh
@@ -81,6 +83,7 @@ submitBtn.addEventListener("click", searchMovie);
 
 // add current video to Watch Later list
 var watchLaterList = function(){
+    
     var watchLaterMovieTitle = movieTitle.innerHTML;
     //console.log(movieTitle);
     //console.log(watchLaterMovieTitle);
@@ -95,9 +98,16 @@ var watchLaterList = function(){
     
     console.log(wlList);
 
-    
+    watchLaterDiv.textContent = "Watch Later: " + JSON.stringify(wlList["movie-title"]);
+    document.getElementById("watch-list").appendChild(watchLaterDiv);
     
 }
+
+
+var watchLaterDiv = document.createElement('div');
+
+    watchLaterDiv.textContent = "Watch Later: " + JSON.stringify(wlList["movie-title"]);
+    document.getElementById("watch-list").appendChild(watchLaterDiv);
 
 watchLater.addEventListener("click", watchLaterList);
 
