@@ -8,6 +8,7 @@ body {
     background-color:rgb(36, 36, 36);
     color: whitesmoke;
 }
+
 .hero {
     display: flex;
     justify-content: center;
