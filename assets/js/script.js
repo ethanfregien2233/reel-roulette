@@ -4,6 +4,9 @@ var watchInfo = document.querySelector("#where-to-watch");
 var submitBtn = document.querySelector("#submit-button");
 var genreMenu = document.querySelector("#genre-menu");
 var trailerContainer = document.querySelector("#trailer-container");
+var watchListButton = document.querySelector("#list-button");
+var watchListContainer = document.querySelector("#watch-list");
+var watchList = [];
 
 var searchMovie = function(event) {
     // prevent Browser default refresh
@@ -31,9 +34,7 @@ var searchMovie = function(event) {
 
 };
 
-var getWatchInfo = function(title) {
-    // put your fetch request here using "title"
-}
+
 
 function getVideo(query) {
 
@@ -63,12 +64,25 @@ function getVideo(query) {
   function embedVideo(data) {
     $('iframe').attr('src', 'https://www.youtube.com/embed/' + data.items[0].id.videoId)
 }
-      
-// getVideo();
-// searchMovie();
+
+// save movie title to watch list into localStorage as object
+var watchLaterListSave = function() {
+    var title = movieTitle.innerHTML
+    var watchList = JSON.parse(localStorage.getItem("watchList")) || [];
+    watchList.push(title);
+    var newTitle = JSON.stringify(watchList);
+    localStorage.setItem("watchList", newTitle); 
+
+    loadWatchList();
+};
+
+var loadWatchList = function() {
+    watchListContainer.textContent = "";
+    
+}
 
 
-
+watchListButton.addEventListener("click", watchLaterListSave);
 submitBtn.addEventListener("click", searchMovie);
 
 //submitBtn.addEventListener("click", getVideo);
