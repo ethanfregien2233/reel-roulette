@@ -50,7 +50,7 @@ Reel Roulette is a website that will generate a random movie and a video trailer
 MIT License
 
 ### Deployed website
-URL GOES HERE!!!!!!!!!!!!!!!!
+https://ethanfregien2233.github.io/project-1/
 
 #### Copyright
 Copyright (c) [2021] [Alex Christianson, Joe Fisher, Ethan Fregien]
