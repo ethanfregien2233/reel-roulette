@@ -3,7 +3,7 @@
 ## Let Reel Roulette help you select a movie tonight. Just choose a genre and we do all the work for you. Get a trailer and a full list of where to watch
 
 ## Table of Contents
-- [Support Movie Genres](#supported-movie-genres)
+- [Supported Movie Genres](#supported-movie-genres)
 - [Purpose](#purpose)
 - [Description](#description)
 - [Screenshots](#screenshots)
@@ -29,13 +29,15 @@
 - Kids
 
 ## Purpose
-fill this in
+Our group wanted to step outside our comfort zone and attempt to work with API’s we hadn’t yet learned about through our lectures, class work or challenge assignments. Our group all really enjoys movies and we thought it would be a cool to apply this mutual interest to our project. I know that sometimes when face with what seems like infinite choice you can get this have the overwhelming dread, you spend literally hours trying to pick something to watch and then end up picking your nose as you scroll tiktok or instagram. Or we all know the pain of sitting down to watch something with a significant other and no one can come to a mutual agreement on what to watch. We decided that our project was going to eliminate these situations. 
 
 ## Description
-fill this in
+
+Reel Roulette is a website that will generate a random movie and a video trailer using The Movie Database api and Youtube’s video search api. Users can select a movie genre and get a movie generated based upon that genre, or they can select the roulette option to get an even more random selection.
 
 ## Screenshots
-![Screenshot of start page]
+
+![image](https://user-images.githubusercontent.com/87037136/137644482-3a44fe13-a17c-4c0d-9e8c-c98f0bdabd6b.png)
 
 
 ## Contributors
