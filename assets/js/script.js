@@ -68,6 +68,11 @@ function getVideo(query) {
 // save movie title to watch list into localStorage as object
 var watchLaterListSave = function() {
     var title = movieTitle.innerHTML
+
+    if (movieTitle.innerHTML === "Welcome to Reel Roulette") {
+        return;
+    }
+
     var watchList = JSON.parse(localStorage.getItem("watchList")) || [];
     watchList.push(title);
     var newTitle = JSON.stringify(watchList);
@@ -78,11 +83,19 @@ var watchLaterListSave = function() {
 
 var loadWatchList = function() {
     watchListContainer.textContent = "";
+    var watchList = localStorage.getItem("watchList");
+    watchList = JSON.parse(watchList);
     
-}
-
+    for (i = 0; i < watchList.length; i++){
+        var eachNewTitle = document.createElement("li");
+        eachNewTitle.innerHTML = watchList[i];
+        console.log(eachNewTitle);
+        
+        watchListContainer.appendChild(eachNewTitle); 
+    }
+};
 
 watchListButton.addEventListener("click", watchLaterListSave);
 submitBtn.addEventListener("click", searchMovie);
 
-//submitBtn.addEventListener("click", getVideo);
+loadWatchList();
