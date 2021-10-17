@@ -9,7 +9,7 @@
 - [Screenshots](#screenshots)
 - [Contributors](#contributors)
 - [License](#license)
--[Deployed Website](#deployed-website)
+- [Deployed Website](#deployed-website)
 - [Copyright](#copyright)
 
 ### Supported Movie Genres
