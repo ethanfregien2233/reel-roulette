@@ -7,7 +7,7 @@ var trailerContainer = document.querySelector("#trailer-container");
 var watchLater = document.querySelector("#watch-later");
  
 // watch later variable to hold object data
- var wlList = [];
+ var watchList = [];
     
 
 
@@ -81,23 +81,19 @@ submitBtn.addEventListener("click", searchMovie);
 //submitBtn.addEventListener("click", getVideo);
 
 
-// add current video to Watch Later list
-var watchLaterListSave = function(wlList) {
-    var watchLaterMovieTitle = {
-        movieName: movieTitle.innerHTML,
-    }
-
-    wlList.push(watchLaterMovieTitle);
-    //console.log(movieTitle);
-    console.log(watchLaterMovieTitle.movieName);
-    localStorage.setItem(JSON.stringify(wlList));
-}
+// save movie title to watch list into localStorage as object
+var watchLaterListSave = function() {
+    var title = movieTitle.innerHTML
+    var watchList = JSON.parse(localStorage.getItem("watchList")) || [];
+    watchList.push(title);
+    var newTitle = JSON.stringify(watchList);
+    localStorage.setItem("watchList", newTitle); 
+};
 
 var watchLaterListLoad = function(){
 
     for ( var i = 0; i <localStorage.length; i++){
-       wlList = localStorage.getItem("Watch Later List")
-        console.log(wlList);
+       
     }
     
 }
@@ -105,4 +101,3 @@ var watchLaterListLoad = function(){
 watchLater.addEventListener("click", watchLaterListSave);
 
 watchLaterListLoad();
-console.log(wlList);
