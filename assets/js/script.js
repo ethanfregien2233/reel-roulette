@@ -4,7 +4,13 @@ var watchInfo = document.querySelector("#where-to-watch");
 var submitBtn = document.querySelector("#submit-button");
 var genreMenu = document.querySelector("#genre-menu");
 var trailerContainer = document.querySelector("#trailer-container");
+var watchListButton = document.querySelector("#list-button");
+var watchListContainer = document.querySelector("#watch-list");
+var recallBtn = document.getElementsByClassName("recallbtn");
+var watchList = [];
 
+
+    
 var searchMovie = function(event) {
     // prevent Browser default refresh
     event.preventDefault();
@@ -31,9 +37,7 @@ var searchMovie = function(event) {
 
 };
 
-var getWatchInfo = function(title) {
-    // put your fetch request here using "title"
-}
+
 
 function getVideo(query) {
 
@@ -63,12 +67,68 @@ function getVideo(query) {
   function embedVideo(data) {
     $('iframe').attr('src', 'https://www.youtube.com/embed/' + data.items[0].id.videoId)
 }
-      
-// getVideo();
-// searchMovie();
+
+// save movie title to watch list into localStorage as object
+var watchLaterListSave = function() {
+    var title = movieTitle.innerHTML
+
+    if (movieTitle.innerHTML === "Welcome to Reel Roulette") {
+        return;
+    }
+
+    var watchList = JSON.parse(localStorage.getItem("watchList")) || [];
+    watchList.push(title);
+    var newTitle = JSON.stringify(watchList);
+    localStorage.setItem("watchList", newTitle); 
+
+    loadWatchList();
+};
+
+var loadWatchList = function() {
+    watchListContainer.textContent = "";
+    var watchList = localStorage.getItem("watchList");
+    watchList = JSON.parse(watchList);
+   // var recallBtnArry = [];
+    
+    for (i = 0; i < watchList.length; i++){
+        //var eachNewTitle = document.createElement("li");
+        //eachNewTitle.className = "col s9"
+       // eachNewTitle.innerHTML = watchList[i];
+        //console.log(eachNewTitle);
+        
+        //watchListContainer.appendChild(eachNewTitle); 
+
+        var recallBtn = document.createElement('button');
+        recallBtn.className = "btn waves-effect waves-light grey darken-3 col s12 recallbtn";
+        recallBtn.id = watchList[i];
+        recallBtn.innerHTML = watchList[i];
+
+        watchListContainer.appendChild(recallBtn);
+        //recallBtn.addEventListener("click", whichTrailer);
+        //console.log(recallBtn.id);
+        //recallBtnArry.push(recallBtn.id);
+    }
+    //console.log(recallBtnArry);
+
+    return recallBtn;
+};
+
+//var whichTrailer = function(recallBtn){
+   
+   // var recallBtnArry = [];
+   // document.getElementsByClassName("recallbtn");
+  //  recallBtnArry.push(recallBtn.innerHTML);
+  // console.log(recallBtn.innerHTML);
+   // console.log(recallBtnArry);
+//}
+//var recallTrailer = function(recallBtnArry){
+    //console.log(JSON.stringify(recallBtnArry));
+   //getVideo(recallBtn.id);
+    
+//}
 
 
 
+watchListButton.addEventListener("click", watchLaterListSave);
 submitBtn.addEventListener("click", searchMovie);
-
-//submitBtn.addEventListener("click", getVideo);
+loadWatchList();
