@@ -3,13 +3,14 @@
 ## Let Reel Roulette help you select a movie tonight. Just choose a genre and we do all the work for you. Get a trailer and a full list of where to watch
 
 ## Table of Contents
-[Support Movie Genres](#supported-movie-genres)
-[Purpose](#purpose)
-[Screenshots](#screenshots)
-[Contributors](#contributors)
-[License](#license)
-[Deployed Website](#deployed-website)
-[Copyright](#copyright)
+- [Support Movie Genres](#supported-movie-genres)
+- [Purpose](#purpose)
+- [Description](#description)
+- [Screenshots](#screenshots)
+- [Contributors](#contributors)
+- [License](#license)
+-[Deployed Website](#deployed-website)
+- [Copyright](#copyright)
 
 ### Supported Movie Genres
 
@@ -29,6 +30,7 @@
 
 ## Purpose
 fill this in
+
 ## Description
 fill this in
 
