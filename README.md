@@ -3,7 +3,13 @@
 ## Let Reel Roulette help you select a movie tonight. Just choose a genre and we do all the work for you. Get a trailer and a full list of where to watch
 
 ## Table of Contents
-[Go to Support Movie Genres section](#supported-movie-genres)
+[Support Movie Genres](#supported-movie-genres)
+[Purpose](#purpose)
+[Screenshots](#screenshots)
+[Contributors](#contributors)
+[License](#license)
+[Deployed Website](#deployed-website)
+[Copyright](#copyright)
 
 ### Supported Movie Genres
 
@@ -39,6 +45,10 @@ fill this in
 ## License
 MIT License
 
+### Deployed website
+URL GOES HERE!!!!!!!!!!!!!!!!
+
+#### Copyright
 Copyright (c) [2021] [Alex Christianson, Joe Fisher, Ethan Fregien]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -58,6 +68,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-### Deployed website
-URL GOES HERE!!!!!!!!!!!!!!!!
