@@ -83,7 +83,12 @@ submitBtn.addEventListener("click", searchMovie);
 
 // save movie title to watch list into localStorage as object
 var watchLaterListSave = function() {
+    
     var title = movieTitle.innerHTML
+    if (movieTitle.innerHTML === "Welcome to Reel Roulette"){
+        return;
+    };
+
     var watchList = JSON.parse(localStorage.getItem("watchList")) || [];
     watchList.push(title);
     var newTitle = JSON.stringify(watchList);
@@ -92,7 +97,7 @@ var watchLaterListSave = function() {
 
 var watchLaterListLoad = function(){
 
-    for ( var i = 0; i <localStorage.length; i++){
+    for ( var i = 0; i <watchList.length; i++){
        
     }
     
