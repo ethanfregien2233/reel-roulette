@@ -5,13 +5,13 @@ var submitBtn = document.querySelector("#submit-button");
 var genreMenu = document.querySelector("#genre-menu");
 var trailerContainer = document.querySelector("#trailer-container");
 var watchLater = document.querySelector("#watch-later");
+ 
+// watch later variable to hold object data
+ var wlList = [];
+    
 
-var wlList = {
-    "movie-title": []}
 
-
-    JSON.parse(localStorage.getItem(wlList));
-
+    
 var searchMovie = function(event) {
     // prevent Browser default refresh
     event.preventDefault();
@@ -82,33 +82,27 @@ submitBtn.addEventListener("click", searchMovie);
 
 
 // add current video to Watch Later list
-var watchLaterList = function(){
-    
-    var watchLaterMovieTitle = movieTitle.innerHTML;
+var watchLaterListSave = function(wlList) {
+    var watchLaterMovieTitle = {
+        movieName: movieTitle.innerHTML,
+    }
+
+    wlList.push(watchLaterMovieTitle);
     //console.log(movieTitle);
-    //console.log(watchLaterMovieTitle);
-    
-    
-    
-    JSON.parse(localStorage.getItem(wlList["movie-title"]));
+    console.log(watchLaterMovieTitle.movieName);
+    localStorage.setItem(JSON.stringify(wlList));
+}
 
-    wlList["movie-title"].push(watchLaterMovieTitle);
+var watchLaterListLoad = function(){
 
-    localStorage.setItem("Watch Later List",JSON.stringify(wlList));
-    
-    console.log(wlList);
-
-    watchLaterDiv.textContent = "Watch Later: " + JSON.stringify(wlList["movie-title"]);
-    document.getElementById("watch-list").appendChild(watchLaterDiv);
+    for ( var i = 0; i <localStorage.length; i++){
+       wlList = localStorage.getItem("Watch Later List")
+        console.log(wlList);
+    }
     
 }
 
+watchLater.addEventListener("click", watchLaterListSave);
 
-var watchLaterDiv = document.createElement('div');
-
-    watchLaterDiv.textContent = "Watch Later: " + JSON.stringify(wlList["movie-title"]);
-    document.getElementById("watch-list").appendChild(watchLaterDiv);
-
-watchLater.addEventListener("click", watchLaterList);
-
-
+watchLaterListLoad();
+console.log(wlList);
